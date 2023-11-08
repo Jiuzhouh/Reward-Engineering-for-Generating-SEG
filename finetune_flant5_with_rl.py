@@ -237,14 +237,6 @@ def compute_reward_rouge(prediction, reference):
     results = rouge.compute(predictions=[prediction], references=[[reference]])
     return results["rougeL"]
 
-def remove_repetition(text):
-    pattern = r'\([^)]+\)(?=[^)]*$)'
-    result = re.sub(pattern, '', text)
-    return result
-
-def compute_self_similarity(prediction):
-    return compute_reward_explagraph(remove_repetition(prediction),prediction)
-
 # save datasets to disk for later easy loading
 # tokenized_dataset["train"].save_to_disk("data/train")
 # tokenized_dataset["test"].save_to_disk("data/eval")
@@ -306,20 +298,12 @@ for epoch, batch in tqdm(enumerate(ppo_trainer.dataloader)):
         rewards_1 = [torch.tensor(compute_reward_explagraph(batch["response"][i], batch["reference"][i])) for i in range(len(batch["response"]))]
     else:
         rewards_1 = [torch.tensor(compute_reward_bleu(batch["response"][i], batch["reference"][i])) for i in range(len(batch["response"]))]
-    #print(batch["response"][0])
-    #print(batch["reference"][0])
-    #print(rewards_1)
-    #print("\n")
-    
+
     texts = [f"""{q}\nOutput:\n{r}""" for q, r in zip(batch["query"], batch["response"])]
     pipe_outputs = sentiment_pipe(texts, **sent_kwargs)
     rewards_2 = [torch.tensor(output[0]["score"] - script_args.reward_baseline) for output in pipe_outputs]
-    #print(rewards_2)
-    #print("-------")
-
+	
     rewards = [x+y for x, y in zip(rewards_1, rewards_2)]
-    #print(rewards)
-    #rewards = rewards_1
 
     # Run PPO step
     stats = ppo_trainer.step(query_tensors, response_tensors, rewards)

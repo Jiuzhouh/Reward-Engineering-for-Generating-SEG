@@ -26,6 +26,8 @@ python merge_peft_adapter.py --adapter_model_name=explagraph-llama-7b-sft --outp
 Then we train a reward model based on that fine-tuned checkpoint:
 ```
 ./run_reward_modeling.sh
+```
+```
 python merge_peft_adapter.py --adapter_model_name=explagraph-reward-model-llama-7b-pretrained --output_name=explagraph-reward-model-llama-7b-pretrained-merged
 ```
 
@@ -40,4 +42,4 @@ python inference_flant5.py
 ```
 
 ## Evaluation
-For the evaluation, we use the o
+For the evaluation, we use the official ExplaGraph [evaluation sctipts.](https://github.com/swarnaHub/ExplaGraphs/tree/main/eval_scripts)

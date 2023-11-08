@@ -1,0 +1,1 @@
+python reward_modeling.py --model_name=explagraph-llama-7b-sft-merged --dataset_path=data/expla_graph_paired_data.json --output_name=explagraph-reward-model-llama-7b-pretrained --val_size=128

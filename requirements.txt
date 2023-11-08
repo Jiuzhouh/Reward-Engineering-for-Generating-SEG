@@ -1,0 +1,9 @@
+transformers
+git+https://github.com/huggingface/peft.git
+git+https://github.com/lvwerra/trl.git
+datasets
+accelerate
+bitsandbytes
+loralib
+gradio
+trl

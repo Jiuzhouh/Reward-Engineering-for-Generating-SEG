@@ -1,0 +1,6 @@
+{
+    "description": "Template used for Llama2",
+    "prompt_input": "Input: {instruction} {input}\nOutput:",
+    "prompt_no_input": "Input: {instruction}\nOutput:",
+    "response_split": "Output:"    
+}

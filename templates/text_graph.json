@@ -1,0 +1,6 @@
+{
+    "description": "Template used by text-graph generation..",
+    "prompt_input": "{instruction} {input}\nOutput:\n",
+    "prompt_no_input": "{instruction}\nOutput:\n",
+    "response_split": "Output:"    
+}

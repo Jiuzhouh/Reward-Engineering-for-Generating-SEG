@@ -1,0 +1,6 @@
+{
+    "description": "prompt used for llama2-chat",
+    "prompt_input": "[INST] <<SYS>>\n{instruction}\n<</SYS>>\n\n{input} [/INST]",
+    "prompt_no_input": "[INST] <<SYS>>\n{instruction}\n<</SYS>>\n [/INST]",
+    "response_split": "[/INST] "    
+}

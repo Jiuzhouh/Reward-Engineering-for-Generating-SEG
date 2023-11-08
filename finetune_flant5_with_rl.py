@@ -69,10 +69,6 @@ ppo_config = PPOConfig(
     seed=script_args.seed,
 )
 
-#peft_model_id = script_args.model_name
-#peft_config = PeftConfig.from_pretrained(peft_model_id)
-#model_name = peft_config.base_model_name_or_path
-#model_name = "philschmid/flan-t5-xxl-sharded-fp16"
 model_name = script_args.model_name
 
 # Define LoRA Config

@@ -12,5 +12,31 @@ python finetune_flant5.py
 ```
 To merge the adaptors into the base model we can use the `merge_peft_adapter.py`.
 ```
-python merge_peft_adapter.py --adapter_model_name=flan-t5-xxl-lora-expla-graph-predict-stance --output_name flan-t5-xxl-lora-expla-graph-predict-stance-merged
+python merge_peft_adapter.py --adapter_model_name=flan-t5-xxl-lora-expla-graph-predict-stance --output_name=flan-t5-xxl-lora-expla-graph-predict-stance-merged
+```
+
+## Stage 2: Reward Modeling
+First we fine-tune llama model on the task data: 
+```
+./run_llama_sft.sh
+```
+```
+python merge_peft_adapter.py --adapter_model_name=explagraph-llama-7b-sft --output_name=explagraph-llama-7b-sft-merged
+```
+Then we train a reward model based on that fine-tuned checkpoint:
+```
+./run_reward_modeling.sh
+```
+```
+python merge_peft_adapter.py --adapter_model_name=explagraph-reward-model-llama-7b-pretrained --output_name=explagraph-reward-model-llama-7b-pretrained-merged
+```
+
+## Stage 3: Reinforcement Learning
+```
+./run_rlhf.sh
+```
+
+## Inference
+```
+python inference_flant5.py
 ```

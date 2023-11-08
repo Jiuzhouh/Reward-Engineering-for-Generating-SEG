@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ```
 python finetune_flant5.py
 ```
-To merge the adaptors into the base model we can use the `merge_peft_adapter.py`.
+To merge the adapter into the base model we can use the `merge_peft_adapter.py`.
 ```
 python merge_peft_adapter.py --adapter_model_name=flan-t5-xxl-lora-expla-graph-predict-stance --output_name=flan-t5-xxl-lora-expla-graph-predict-stance-merged
 ```

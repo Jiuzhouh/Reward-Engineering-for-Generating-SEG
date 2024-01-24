@@ -1,5 +1,5 @@
 # Reward-Engineering-for-Generating-SEG
-This is the official code for the paper: [Reward Engineering for Generating Semi-structured Explanation](https://arxiv.org/pdf/2309.08347.pdf) (EACL2024 accepted).
+This is the official code for the paper: [Reward Engineering for Generating Semi-structured Explanation](https://arxiv.org/pdf/2309.08347.pdf) (accepted to EACL2024).
 
 ## Setup
 ```

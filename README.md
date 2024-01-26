@@ -43,3 +43,17 @@ python inference_flant5.py
 
 ## Evaluation
 For the evaluation, we use the official ExplaGraph [evaluation sctipts.](https://github.com/swarnaHub/ExplaGraphs/tree/main/eval_scripts)
+
+
+## Citation
+```
+@misc{han2024reward,
+      title={Reward Engineering for Generating Semi-structured Explanation}, 
+      author={Jiuzhou Han and Wray Buntine and Ehsan Shareghi},
+      year={2024},
+      eprint={2309.08347},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+

@@ -1,5 +1,5 @@
 # Reward-Engineering-for-Generating-SEG
-This is the official code for the paper: [Reward Engineering for Generating Semi-structured Explanation](https://arxiv.org/pdf/2309.08347.pdf) (accepted to EACL2024).
+This is the official code for the paper: [Reward Engineering for Generating Semi-structured Explanation](https://aclanthology.org/2024.findings-eacl.41.pdf) (accepted to EACL2024).
 
 ## Setup
 ```
@@ -47,13 +47,20 @@ For the evaluation, we use the official ExplaGraph [evaluation sctipts.](https:/
 
 ## Citation
 ```
-@misc{han2024reward,
-      title={Reward Engineering for Generating Semi-structured Explanation}, 
-      author={Jiuzhou Han and Wray Buntine and Ehsan Shareghi},
-      year={2024},
-      eprint={2309.08347},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{han-etal-2024-reward,
+    title = "Reward Engineering for Generating Semi-structured Explanation",
+    author = "Han, Jiuzhou  and
+      Buntine, Wray  and
+      Shareghi, Ehsan",
+    editor = "Graham, Yvette  and
+      Purver, Matthew",
+    booktitle = "Findings of the Association for Computational Linguistics: EACL 2024",
+    month = mar,
+    year = "2024",
+    address = "St. Julian{'}s, Malta",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-eacl.41",
+    pages = "589--602",
 }
 ```
 
